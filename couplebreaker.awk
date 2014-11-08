@@ -1,5 +1,5 @@
 # Author: Sixela
-# Version: 1.0.0
+# Version: 1.0.1
 # Format: When;Who;What;HowMuch;Personnal;DirectDebt
 # Outcomes = value
 # Incomes = +value
