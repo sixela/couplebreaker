@@ -58,8 +58,12 @@ END {
 	}
 
 	OFS="\t"
-	printf "%-10s%10s%10s%10s%10s%10s\n", "User","Incomes","Expenses","Personnal","Direct","Total"
-	printf "%-10s%10s%10s%10s%10s%10s\n", "----","-------","--------","---------","------","-----"
+	printf "%-10s%10s%10s%10s%10s%10s\n", \
+	"User","Incomes","Expenses","Personnal","Direct","Total"
+	
+	printf "%-10s%10s%10s%10s%10s%10s\n", \
+	"----","-------","--------","---------","------","-----"
+	
 	tot=0
 	for(u in users){
 		users[u] = users[u] - min
@@ -68,6 +72,9 @@ END {
 		printf "%-10s%10s%10s%10s%10s%10.10s\n", \
 		u,incomes[u],expenses[u],personnal[u],direct_debts[u],users[u]
 	}
-	printf "%-10s%10s%10s%10s%10s%10s\n", "----","-------","--------","---------","------","-----"
-	printf "%-10s%10s%10s%10s%10s%10.10s\n", "Total",incomes[Total],expenses[Total],personnal[Total],direct_debts[Total],tot
+	printf "%-10s%10s%10s%10s%10s%10s\n", \
+	"----","-------","--------","---------","------","-----"
+	
+	printf "%-10s%10s%10s%10s%10s%10.10s\n", \
+	"Total",incomes[Total],expenses[Total],personnal[Total],direct_debts[Total],tot
 }
