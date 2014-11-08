@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Simple money-owed calculator for the end of the month
+Simple money-owed calculator for the end of the month.
 Only works for 2 persons
 
 ##Usage
@@ -13,7 +13,9 @@ Only works for 2 persons
 Input file must be field-separated with following columns: When;Who;What;HowMuch;Personnal;DirectDebt
 * Separator chosen doesn't matter. Default is "\t" but you can change it with awf's -F
 * "When" field isn't really used for now. But will be, as a filter. Format is ^[0-9]{2}.[0-9]{2}.[0-9]{2,4}
-* "Personnal" field means that it's a personnal purchase and shoudn't count for shared expenses
+* "Personnal" field :
+  * Filled with a number: add amount into personnal expenses, and remove it from HowMuch amount
+  * Filled with another character: it's a personnal purchase and shoudn't count into shared expenses
 * "DirectDebt" field means that one made a purchase (that shouldn't count for shared expenses) but for the other
 
 ##Example

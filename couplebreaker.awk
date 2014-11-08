@@ -21,13 +21,21 @@ $1 ~ /^[0-9]{2}.[0-9]{2}.[0-9]{2,4}/ && NF>=4{
 
 	users[$2]
 	
-	if(NF>5) { 
+	if(NF>5 && $6 != "") { 
 		direct_debts[$2] += $4 
 		direct_debts[Total] += $4
 	}
-	else if (NF>4) { 
-		personnal[$2] += $4 
-		personnal[Total] += $4
+	else if (NF>4 && $5 != "") {
+		if($5 ~ /[0-9]+(\.[0-9]+)?/){
+			personnal[$2] += $5
+			personnal[Total] += $5
+			expenses[$2] += ($4-$5)
+			expenses[Total] += expenses[$2]
+		}
+		else {
+			personnal[$2] += $4 
+			personnal[Total] += $4
+		}
 	}
 	else if ($4 ~ /^\+/) { 
 		incomes[$2] += $4 
