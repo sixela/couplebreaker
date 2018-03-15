@@ -1,5 +1,7 @@
 # Couple Breaker
 
+For a more generic version of money-owed calc script, you can find another script (python) at https://gist.github.com/sixela/c63fc4e324983c2a769825fe0465ce44
+
 ## Purpose
 
 Simple money-owed calculator for the end of the month.
